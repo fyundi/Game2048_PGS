@@ -40,14 +40,17 @@ export interface IUIConfig {
     uiClass: new () => UIBase;
 }
 
+export let uiRegistrations: Array<() => void> = [];
 // 装饰器，用于自动注册UI类
 export function RegisterUI(prefabName: string, type: EnumUIType) {
     return function (target: new () => UIBase) {
         const className = StringUtil.getClassName(target);
-        App.UI.registerUI(className, {
-            prefabName: prefabName,
-            type: type,
-            uiClass: target
-        } as IUIConfig);
+        uiRegistrations.push(() => {
+            App.UI.registerUI(className, {
+                prefabName: prefabName,
+                type: type,
+                uiClass: target
+            } as IUIConfig);
+        });
     };
 }

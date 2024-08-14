@@ -182,4 +182,21 @@ export default class StringUtil {
             return null;
         }
     }
+
+    /**\
+     * 获取URL参数
+     */
+    public static getQueryString(name: string) {
+        let search = location.search;
+        if (search.indexOf('?') != -1) {
+            search = search.substring(1);
+        }
+        let urls = search.split('&');
+        for (let i = 0; i < urls.length; i++) {
+            if (urls[i].split('=')[0] == name) {
+                return urls[i].split('=')[1];
+            }
+        }
+        return '';
+    }
 }

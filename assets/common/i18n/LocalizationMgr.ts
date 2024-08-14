@@ -18,7 +18,7 @@ export interface ILans {
     serverLan?: any //可选语言表文件
 }
 
-export class LocalizationMgr extends Singleton<LocalizationMgr> {
+export class LocalizationManager extends Singleton<LocalizationManager> {
     private _curLanguage: string;
     protected _languages: any;
     protected _serverLanguages: any; //服务器语言包，基本用于toast

@@ -4,7 +4,7 @@ import Singleton from "../singleton/Sington";
 import { UIBase } from "./UIBase";
 import App from "../App";
 import { ArrayUtil } from "../tools/ArrayUtil";
-import { EnumUIType, IOpeningUIInfo, IUIConfig } from "./UIDefines";
+import { EnumUIType, IOpeningUIInfo, IUIConfig, uiRegistrations } from "./UIDefines";
 import StringUtil from "../tools/StringUtil";
 
 /**
@@ -39,6 +39,11 @@ export default class UIManager extends Singleton<UIManager> {
     private cacheUIMap: Map<string, UIBase>;
 
     public init() {
+        //注册UI装饰器
+        uiRegistrations.forEach(uiDefinesFun => {
+            uiDefinesFun?.();
+        });
+
         this.openedViewUIList = new Array<UIBase>();
         this.openedAlertUIList = new Array<UIBase>();
         this.openedTipUIList = new Array<UIBase>();

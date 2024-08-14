@@ -1,5 +1,5 @@
 
-import { _decorator, Component, SpriteFrame, Sprite, assetManager, Texture2D, ImageAsset } from 'cc';
+import { _decorator, Component, Sprite } from 'cc';
 import App from '../App';
 const { ccclass, executeInEditMode } = _decorator;
 
@@ -28,8 +28,8 @@ export class I18nSprite extends Component {
 
     async updateSprite() {
         if (!this.sprite || !this.spriteFrameName) return;
-        let resPath = App.localization.getFullPath(this.spriteFrameName, "spriteFrame");
-        let res = await App.asyncGetI18nRes(resPath);
-        if (res && this.sprite) this.sprite.spriteFrame = res;
+        let resPath = App.Localization.getFullPath(this.spriteFrameName, "spriteFrame");
+        // let res = await App.asyncGetI18nRes(resPath);
+        // if (res && this.sprite) this.sprite.spriteFrame = res;
     }
 }

@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "a7c7c0e0-889e-4150-a38e-2bd2a4383347",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "a7c7c0e0-889e-4150-a38e-2bd2a4383347@6c48a",
+      "displayName": "img_hall_logo",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a7c7c0e0-889e-4150-a38e-2bd2a4383347",
+        "visible": false
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "a7c7c0e0-889e-4150-a38e-2bd2a4383347@f9941",
+      "displayName": "img_hall_logo",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 1.5,
+        "offsetY": -5.5,
+        "trimX": 17,
+        "trimY": 20,
+        "width": 649,
+        "height": 271,
+        "rawWidth": 680,
+        "rawHeight": 300,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -324.5,
+            -135.5,
+            0,
+            324.5,
+            -135.5,
+            0,
+            -324.5,
+            135.5,
+            0,
+            324.5,
+            135.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            17,
+            280,
+            666,
+            280,
+            17,
+            9,
+            666,
+            9
+          ],
+          "nuv": [
+            0.025,
+            0.03,
+            0.9794117647058823,
+            0.03,
+            0.025,
+            0.9333333333333333,
+            0.9794117647058823,
+            0.9333333333333333
+          ],
+          "minPos": [
+            -324.5,
+            -135.5,
+            0
+          ],
+          "maxPos": [
+            324.5,
+            135.5,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a7c7c0e0-889e-4150-a38e-2bd2a4383347@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "fixAlphaTransparencyArtifacts": true,
+    "hasAlpha": true,
+    "redirect": "a7c7c0e0-889e-4150-a38e-2bd2a4383347@f9941"
+  }
+}

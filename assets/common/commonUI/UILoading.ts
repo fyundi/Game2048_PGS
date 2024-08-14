@@ -12,8 +12,10 @@ export default class UILoading extends UIBase {
     lblTip: Label = null;
 
     onLoad() {
-        this.scheduleOnce(() => {
-            this.lblTip.string = "测试加载界面"
-        }, 3);
+      
+    }
+
+    protected onDestroy(): void {
+        this.unscheduleAllCallbacks();
     }
 }

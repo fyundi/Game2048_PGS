@@ -1,3 +1,5 @@
+import { Client, Group, Player, Room } from "../GOBE/GOBE";
+
 export class GOBEConfig {
     public static appId: string = "172249065903323583";
     public static openId: string = "123";
@@ -6,11 +8,17 @@ export class GOBEConfig {
     public static accessToken: string = "";
 }
 
+export enum EnumEnterRoomType {
+    Create,
+    Join,
+    Match
+}
+
 // 设置全局变量global
 export let GOBEGlobal = {
-    client: null, // Client实例
-    room: null,   // Room实例
-    group: null,  // Group实例
-    player: null, // Player实例
+    client: null as Client | null, // Client实例
+    room: null as Room | null,   // Room实例
+    group: null as Group | null,  // Group实例
+    gPlayer: null as Player | null, // Player实例
 }
 export let WGOBE = window.GOBE;

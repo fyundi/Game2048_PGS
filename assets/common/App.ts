@@ -1,17 +1,20 @@
-import { AssetManager, Component, director, Node } from "cc";
+import { Component, director, Node } from "cc";
 import { EventManager } from "./event/EventManager";
 import { IPlatform } from "./platfrom/IPlatform";
 import { AppComponent } from "./component/AppComponent";
 import HttpManager from "./http/HttpMgr";
-import { EnumLanType, ILans, LocalizationMgr } from "./i18n/LocalizationMgr";
+import { EnumLanType, ILans, LocalizationManager } from "./i18n/LocalizationMgr";
 import ResManager from "./res/ResManager";
 import UIManager from "./ui/UIManager";
 import { RoomManager } from "./room/RoomManager";
+import ModelManager from "./model/ModelMgr";
+import { AppProxy } from "./proxy/AppProxy";
 
 /**全局门面类**/
 export default class App {
     public static platform: IPlatform;
     public static appNode: Node;
+    public static proxy: AppProxy;
     public static appComp: Component;
     public static readonly appNodeName: string = "AppRoot";
 
@@ -26,6 +29,7 @@ export default class App {
         App.appNode.setPosition(-9999, -9999, -9999);
         director.addPersistRootNode(App.appNode);
         App.appComp = App.appNode.addComponent(AppComponent);
+        App.proxy = new AppProxy();
         //部分单例类初始化
         App.UI.init();
         App.Localization.initLans(lanObj);
@@ -60,5 +64,6 @@ export default class App {
     public static get Res(): ResManager { return ResManager.intance(ResManager); }
     public static get UI(): UIManager { return UIManager.intance(UIManager); }
     public static get Room(): RoomManager { return RoomManager.intance(RoomManager); }
-    public static get Localization(): LocalizationMgr { return LocalizationMgr.intance(LocalizationMgr) }
+    public static get Model(): ModelManager { return ModelManager.intance(ModelManager) }
+    public static get Localization(): LocalizationManager { return LocalizationManager.intance(LocalizationManager) }
 }

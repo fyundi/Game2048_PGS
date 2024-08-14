@@ -1,5 +1,6 @@
 import { _decorator, Component, Label } from 'cc';
-import { LocalizationMgr } from './LocalizationMgr';
+import { LocalizationManager } from './LocalizationMgr';
+import App from '../App';
 const { ccclass, property, executeInEditMode } = _decorator;
 
 @ccclass('LocalizedLabel')
@@ -34,6 +35,6 @@ export class LocalizedLabel extends Component {
     }
 
     updateLabel() {
-        this.label && (this.label.string = LocalizationMgr.ins.getLan(this.lanType, this.key));
+        this.label && (this.label.string = App.Localization.getLan(this.lanType, this.key));
     }
 }

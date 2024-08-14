@@ -1,6 +1,6 @@
 
 import { _decorator, Component, SpriteFrame, Sprite } from 'cc';
-import { LocalizationMgr } from './LocalizationMgr';
+import App from '../App';
 const { ccclass, property, executeInEditMode } = _decorator;
 
 @ccclass('LocalizedSpriteItem')
@@ -39,7 +39,7 @@ export class LocalizedSprite extends Component {
     updateSprite () {
         for (let i = 0; i < this.spriteList.length; i++) {
             const item = this.spriteList[i];
-            if (item.language === LocalizationMgr.ins.curLanguage) {
+            if (item.language === App.Localization.curLanguage) {
                 if(this.sprite == null) {
                     let sprite = this.getComponent('cc.Sprite') as Sprite;
                     this.sprite = sprite;
